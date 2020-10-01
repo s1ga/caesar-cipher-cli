@@ -1,0 +1,18 @@
+{
+  "name": "my_caesar_cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my_caesar_cli",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "htpps://github.com/s1ga/caesar-cipher-cli"
+  },
+  "author": "Siarhei Harlanau <s.v.harlanov@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^6.1.0"
+  }
+}
