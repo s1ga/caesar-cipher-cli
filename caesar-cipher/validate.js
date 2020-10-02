@@ -11,7 +11,6 @@ module.exports = function validate(path) {
                 console.error(`There are no such file "${path}"`)
                 process.exit(-1)
             }
-    
         })
         
         //in other case return our path

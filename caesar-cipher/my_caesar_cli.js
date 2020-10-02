@@ -21,12 +21,12 @@ commander
     .parse(process.argv)
 
 //validate the files path
-const input = program.input ? validate(program.input) : null
-const output = program.output ? validate(program.output) : null
+const input = commander.input ? validate(commander.input) : null
+const output = commander.output ? validate(commander.output) : null
 
 //creating proto for transform stream for cipher
 Transform.prototype._transform = function(chunk, encoding, callback) {
-    callback(null, caesarCipher(chunk.toString(), +program.shift, program.action))
+    callback(null, caesarCipher(chunk.toString(), +commander.shift, commander.action))
 }
 
 //vars for streams
