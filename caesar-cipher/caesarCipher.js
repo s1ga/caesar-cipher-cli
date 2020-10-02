@@ -4,16 +4,13 @@ module.exports = function caesarCipher(string, shift, action) {
     //depending on action 
     if (action === 'decode') {
         return caesarCipher(string, 26 - shift, 'encode')
-    } else if (action !== 'encode') {
-        console.error("error: required option '-a, --action <name>' not specified")
-        process.exit(-1)
-    }
+    } 
 
-    //negative shift being changed for decoding
-    if (shift < 0) {
-        console.log("Works only with positive numbers. Please, try again")
-        process.exit(-1)
-    }
+    // //negative shift being changed for decoding
+    // if (shift < 0) {
+    //     console.log("Works only with positive numbers. Please, try again")
+    //     process.exit(-1)
+    // }
 
     //returning the encoded/decoded string
     return string.split('').map(c => {
