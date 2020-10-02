@@ -5,7 +5,7 @@ const {pipeline, Transform} = require("stream")
 //our caesar cipher function
 const caesarCipher = require('./caesarCipher')
 //our path validation
-const validate = require('./validate')
+const validatePath = require('./validatePath')
 //our argument validation
 const validateArgs = require('./validateArgs')
 const { program } = require('commander')
@@ -34,8 +34,8 @@ Transform.prototype._transform = function(chunk, encoding, callback) {
 }
 
 //validate the files path
-const output = commander.output ? validate(commander.output) : null
-const input = commander.input ? validate(commander.input) : null
+const output = commander.output ? validatePath(commander.output) : null
+const input = commander.input ? validatePath(commander.input) : null
     
 //vars for streams
 const outputStream = output 
