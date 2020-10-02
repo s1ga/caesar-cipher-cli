@@ -12,7 +12,7 @@ module.exports = function caesarCipher(string, shift, action) {
     //negative shift being changed for decoding
     if (shift < 0) {
         console.log("Works only with positive numbers. Please, try again")
-        process.exit(1)
+        process.exit(-1)
     }
 
     //returning the encoded/decoded string

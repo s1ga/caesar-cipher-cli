@@ -21,8 +21,8 @@ commander
     .parse(process.argv)
 
 //validate the files path
-const input = commander.input ? validate(commander.input) : null
 const output = commander.output ? validate(commander.output) : null
+const input = commander.input ? validate(commander.input) : null
 
 //creating proto for transform stream for cipher
 Transform.prototype._transform = function(chunk, encoding, callback) {
@@ -30,12 +30,12 @@ Transform.prototype._transform = function(chunk, encoding, callback) {
 }
 
 //vars for streams
-const inputStream = input 
-                    ? fs.createReadStream(path.join(__dirname, input)) 
-                    : process.stdin
 const outputStream = output 
                     ? fs.createWriteStream(path.join(__dirname, output), {flags: 'a+'}) 
                     : process.stdout
+const inputStream = input 
+                    ? fs.createReadStream(path.join(__dirname, input)) 
+                    : process.stdin
 const transformStream = new Transform()
 
 //pipeline with our streams

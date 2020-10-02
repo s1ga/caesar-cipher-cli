@@ -3,6 +3,9 @@ const fs = require("fs")
 module.exports = function validate(path) {
     // try/catch block for asynchronous code 
     try {
+        fs.unlink(path, err => {
+            return
+        })
         //check access or existence of file
         fs.access(path, err => {
             //if false, delete them and exit the app
