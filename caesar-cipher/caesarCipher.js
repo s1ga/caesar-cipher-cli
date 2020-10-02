@@ -1,7 +1,12 @@
+const os = require("os")
+
 module.exports = function caesarCipher(string, shift, action) {
     //depending on action 
     if (action === 'decode') {
-        return caesarCipher(string, 26 - shift)
+        return caesarCipher(string, 26 - shift, 'encode')
+    } else if (action !== 'encode') {
+        console.error("error: required option '-a, --action <name>' not specified")
+        process.exit(-1)
     }
 
     //negative shift being changed for decoding
@@ -31,5 +36,5 @@ module.exports = function caesarCipher(string, shift, action) {
         return c
     })
     //join array to string
-    .join('')
+    .join('') + os.EOL
 }
