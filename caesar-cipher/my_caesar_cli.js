@@ -5,14 +5,16 @@ const {} = require("stream")
 
 //our caesar cipher function
 const caesarCipher = require('./caesarCipher')
+//our path validation
+const validate = require('./validate')
 
 
 //creating flags for app
-program
+commander
     .storeOptionsAsProperties(true)
     .passCommandToAction(true)
-program.version('0.0.1')
-program
+commander.version('0.0.1')
+commander
     .requiredOption('-a, --action <name>', 'Action: encode or decode')
     .requiredOption('-s, --shift <number>', 'Shift of cipher')
     .option('-i, --input <path>', 'File from which cipher will be read')
