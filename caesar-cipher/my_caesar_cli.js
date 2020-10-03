@@ -3,12 +3,11 @@ const path = require('path')
 const commander = require('commander')
 const {pipeline, Transform} = require("stream")
 //our caesar cipher function
-const caesarCipher = require('./caesarCipher')
+const caesarCipher = require('./utils/caesarCipher')
 //our path validation
-const validatePath = require('./validatePath')
+const validatePath = require('./utils/validatePath')
 //our argument validation
-const validateArgs = require('./validateArgs')
-const { program } = require('commander')
+const validateArgs = require('./utils/validateArgs')
 
 
 //creating flags for app
@@ -21,9 +20,7 @@ commander
     .requiredOption('-s, --shift <number>', 'Shift of cipher')
     .option('-i, --input <path>', 'File from which cipher will be read')
     .option('-o, --output <path>', 'File where cipher will be written')
-
-//parse arguments
-commander.parse(process.argv)
+    .parse(process.argv) // parse arguments
 
 //validation arguments
 validateArgs(commander.shift, commander.action)
