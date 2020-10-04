@@ -6,12 +6,6 @@ module.exports = function caesarCipher(string, shift, action) {
         return caesarCipher(string, 26 - shift, 'encode')
     } 
 
-    // //negative shift being changed for decoding
-    // if (shift < 0) {
-    //     console.log("Works only with positive numbers. Please, try again")
-    //     process.exit(-1)
-    // }
-
     //returning the encoded/decoded string
     return string.split('').map(c => {
         //check if letter

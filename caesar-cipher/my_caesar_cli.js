@@ -27,7 +27,7 @@ validateArgs(commander.shift, commander.action)
 
 //creating proto for transform stream for cipher
 Transform.prototype._transform = function(chunk, encoding, callback) {
-    callback(null, caesarCipher(chunk.toString(), +commander.shift, commander.a))
+    callback(null, caesarCipher(chunk.toString(), +commander.shift, commander.action))
 }
 
 //validate the files path
