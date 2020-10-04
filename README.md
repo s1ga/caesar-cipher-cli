@@ -25,6 +25,7 @@ Application has 4 options:
 
     3. node my_caesar_cli -a decode -s 23
 ```
-In first case(if files exists) you will get cipher to output.txt file from input.txt
-In second case(if file exists) you will get cipher from input file to stdout(console)
-In third case you will enter your text in stdin and get your cipher in stdout(console)
+
+*In first case(if files exists) you will get cipher to output.txt file from input.txt
+*In second case(if file exists) you will get cipher from input file to stdout(console)
+*In third case you will enter your text in stdin and get your cipher in stdout(console)
