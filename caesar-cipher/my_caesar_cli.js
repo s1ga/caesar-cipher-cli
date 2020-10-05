@@ -36,10 +36,10 @@ const input = commander.input ? validatePath(commander.input) : null
     
 //vars for streams
 const outputStream = output 
-                    ? fs.createWriteStream(path.join(__dirname, output), {flags: 'a+'}) 
+                    ? fs.createWriteStream(path.resolve(output), {flags: 'a+'}) 
                     : process.stdout
 const inputStream = input 
-                    ? fs.createReadStream(path.join(__dirname, input)) 
+                    ? fs.createReadStream(path.resolve(input)) 
                     : process.stdin
 const transformStream = new Transform()
 
