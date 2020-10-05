@@ -17,6 +17,8 @@ Application has 4 options:
 * **-i, --input**. The path of existing file for reading text. If option is empty, app will use stdin(console). Error will be if there are no access to file
 * **-o, --output**. Likiwese input, but this is file for writing text. If option is empty, app will use stdout(console).
 
+To finish writing in stdin(console) press _Ctrl+C_
+
 ## Examples
 ```bash
     $ node my_caesar_cli --action decode --shift 23 --input input.txt --output output.txt
