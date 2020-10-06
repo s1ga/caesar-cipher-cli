@@ -23,7 +23,7 @@ commander
     .parse(process.argv) // parse arguments
 
 //validation arguments
-validateArgs(commander.shift, commander.action)
+validateArgs(+commander.shift, commander.action)
 
 //creating proto for transform stream for cipher
 Transform.prototype._transform = function(chunk, encoding, callback) {
